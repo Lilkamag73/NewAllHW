@@ -16,16 +16,15 @@ public class HM4 {
         int clientOS;
         System.out.println("Введите номер операционной системы (0 - iOS, 1 - Android): ");
         clientOS = scanner.nextInt();
-        switch (clientOS) {
-            case 0:
-                System.out.println("Установите версию приложения для iOS по ссылке");
-                break;
-            case 1:
-                System.out.println("Установите версию приложения для Android по ссылке");
-                break;
-            default:
-                System.out.println("Неверный номер операционной системы");
+
+        if (clientOS == 0) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else if (clientOS == 1) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else {
+            System.out.println("Неверный номер операционной системы");
         }
+
     }
 
     public static void task2(Scanner scanner) {
@@ -84,7 +83,7 @@ public class HM4 {
         } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
             deliveryDate = 3;
             System.out.println("Потребуется дней: " + deliveryDate);
-        } else if (deliveryDistance > 100) {
+        } else {
             System.out.println("Доставка не возможна");
         }
     }
